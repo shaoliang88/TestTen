@@ -51,10 +51,16 @@ public class ClassIfyFragment extends Fragment implements ClassifyConstract.ICla
     }
 
     @Override
-    public void ShowList(List<OneBean.DatasBean.ClassListBean> list) {
+    public void ShowList(final List<OneBean.DatasBean.ClassListBean> list) {
         LeftAdapter leftAdapter = new LeftAdapter(list,getActivity());
         leftRcv.setAdapter(leftAdapter);
         leftRcv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        leftAdapter.setOnLeftClickListener(new LeftAdapter.OnLeftClickListener() {
+            @Override
+            public void OnItemClickListener(View v, int position) {
+                //Toasts.showLong(getActivity(),list.get(position).getGc_name());
+            }
+        });
     }
 
     @Override

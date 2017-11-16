@@ -29,6 +29,18 @@ public class LeftAdapter extends RecyclerView.Adapter<LeftAdapter.MyViewHolder> 
 
     private List<OneBean.DatasBean.ClassListBean> list;
     private Context  context;
+    private OnLeftClickListener  onLeftClickListener;
+    public interface OnLeftClickListener{
+        void OnItemClickListener(View v,int position);
+    }
+
+    public OnLeftClickListener getOnLeftClickListener() {
+        return onLeftClickListener;
+    }
+
+    public void setOnLeftClickListener(OnLeftClickListener onLeftClickListener) {
+        this.onLeftClickListener = onLeftClickListener;
+    }
 
     public LeftAdapter(List<OneBean.DatasBean.ClassListBean> list, Context context) {
         this.list = list;
@@ -44,13 +56,19 @@ public class LeftAdapter extends RecyclerView.Adapter<LeftAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         OneBean.DatasBean.ClassListBean cb = list.get(position);
         holder.leftTv.setText(cb.getGc_name());
         if(cb.getImage()!=null){
             Uri uri = Uri.parse(cb.getImage());
             holder.leftImg.setImageURI(uri);
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onLeftClickListener.OnItemClickListener(v,position);
+            }
+        });
     }
 
     @Override

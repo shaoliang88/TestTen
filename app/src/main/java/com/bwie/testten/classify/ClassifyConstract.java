@@ -11,6 +11,7 @@ import java.util.List;
 public interface ClassifyConstract {
     interface IClassifyView{
         void ShowList(List<OneBean.DatasBean.ClassListBean> list);
+        void ShowRight();
         void ShowError(String e);
     }
     interface IClassifyModel{
