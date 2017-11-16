@@ -68,6 +68,7 @@ public class HomeFragment extends Fragment implements BannerConstract.IBannerVie
         banner.setPageTransformer(Transformer.Rotate);
         // 设置XBanner页面切换的时间，即动画时长
         banner.setPageChangeDuration(1000);
+        banner.stopAutoPlay();
         BannerPresenter bannerPresenter = new BannerPresenter(this);
         bannerPresenter.LoadBan(Api.BANNERURL);
         //sllv.setScrollViewListener(this);

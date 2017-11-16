@@ -21,7 +21,7 @@ public class RetroFactory {
             .readTimeout(30, TimeUnit.SECONDS)
             .build();
     private static ApiServer retrofitService = new Retrofit.Builder()
-            .baseUrl(Api.HOME_URL)
+            .baseUrl(Api.FENLIEURL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
             .client(httpClient)

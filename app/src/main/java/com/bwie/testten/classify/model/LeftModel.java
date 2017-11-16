@@ -1,9 +1,12 @@
 package com.bwie.testten.classify.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.bwie.testten.classify.ClassifyConstract;
 import com.bwie.testten.classify.bean.OneBean;
+import com.bwie.testten.classify.bean.TwoBean;
 import com.bwie.testten.utils.ApiServer;
 
 import retrofit2.Retrofit;
@@ -18,10 +21,10 @@ import rx.schedulers.Schedulers;
  * Created by Zhang on 2017/11/14.
  */
 
-public class LeftModel implements ClassifyConstract.IClassifyModel {
+public class LeftModel implements ClassifyConstract.IClassifyModel{
 
     @Override
-    public void OnRequestListener(String url, final ClassifyConstract.OnRequestListener onRequestListener) {
+    public void OnRequestsListener(String url, final ClassifyConstract.OnRequestListener onRequestListener) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -44,8 +47,41 @@ public class LeftModel implements ClassifyConstract.IClassifyModel {
 
                     @Override
                     public void onNext(OneBean oneBean) {
-                        List<OneBean.DatasBean.ClassListBean> class_list = oneBean.getDatas().getClass_list();
+                        List<OneBean.DataBean> class_list = oneBean.getData();
                         onRequestListener.OnSuccess(class_list);
+                    }
+                });
+    }
+
+    @Override
+    public void OnRightData(String url,int cid, final ClassifyConstract.OnRightListener onRightListener) {
+
+        Map<String,Integer> map = new HashMap<>();
+        map.put("cid",cid);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+        ApiServer apiServer = retrofit.create(ApiServer.class);
+        Observable<TwoBean> right = apiServer.getRight("product/getProductCatagory",map);
+        right.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<TwoBean>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        onRightListener.OnError(e.getMessage().toString());
+                    }
+
+                    @Override
+                    public void onNext(TwoBean oneBean) {
+                        List<TwoBean.DataBean> data = oneBean.getData();
+                        onRightListener.OnSuccess(data);
                     }
                 });
     }

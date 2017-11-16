@@ -23,7 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".mine.view.LoginActivity" />
-        <activity android:name=".mine.view.SignUpActivity"></activity>
+        <activity android:name=".mine.view.SignUpActivity" />
+        <activity android:name=".Goods.view.GoodActivity" />
+        <activity android:name=".Goods.view.DetailsActivity"></activity>
     </application>
 
 </manifest>

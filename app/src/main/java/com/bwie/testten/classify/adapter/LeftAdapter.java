@@ -27,7 +27,7 @@ import retrofit2.http.Url;
 
 public class LeftAdapter extends RecyclerView.Adapter<LeftAdapter.MyViewHolder> {
 
-    private List<OneBean.DatasBean.ClassListBean> list;
+    private List<OneBean.DataBean> list;
     private Context  context;
     private OnLeftClickListener  onLeftClickListener;
     public interface OnLeftClickListener{
@@ -42,7 +42,7 @@ public class LeftAdapter extends RecyclerView.Adapter<LeftAdapter.MyViewHolder> 
         this.onLeftClickListener = onLeftClickListener;
     }
 
-    public LeftAdapter(List<OneBean.DatasBean.ClassListBean> list, Context context) {
+    public LeftAdapter(List<OneBean.DataBean> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -57,10 +57,10 @@ public class LeftAdapter extends RecyclerView.Adapter<LeftAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        OneBean.DatasBean.ClassListBean cb = list.get(position);
-        holder.leftTv.setText(cb.getGc_name());
-        if(cb.getImage()!=null){
-            Uri uri = Uri.parse(cb.getImage());
+        OneBean.DataBean cb = list.get(position);
+        holder.leftTv.setText(cb.getName());
+        if(cb.getIcon()!=null){
+            Uri uri = Uri.parse(cb.getIcon());
             holder.leftImg.setImageURI(uri);
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {

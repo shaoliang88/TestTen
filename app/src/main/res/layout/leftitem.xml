@@ -9,15 +9,15 @@
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/left_img"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         fresco:placeholderImage="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/left_tv"
         android:layout_gravity="center_horizontal"
-        android:textSize="13sp"
+        android:textSize="15sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold" />
