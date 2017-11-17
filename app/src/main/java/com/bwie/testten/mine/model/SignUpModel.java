@@ -23,7 +23,7 @@ import rx.schedulers.Schedulers;
 public class SignUpModel implements SignUpConstract.ISignUpModel {
 
     @Override
-    public void RequestData(String url, String username, String password, String password_confirm, String email, final SignUpConstract.OnRequestListener onRequestListener) {
+    public void RequestData(String url, String username, String password, String password_confirm, final SignUpConstract.OnRequestListener onRequestListener) {
         Map<String,String> map = new HashMap<>();
         map.put("mobile",username);
         map.put("password",password);

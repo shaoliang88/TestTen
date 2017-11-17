@@ -25,7 +25,8 @@
         <activity android:name=".mine.view.LoginActivity" />
         <activity android:name=".mine.view.SignUpActivity" />
         <activity android:name=".Goods.view.GoodActivity" />
-        <activity android:name=".Goods.view.DetailsActivity"></activity>
+        <activity android:name=".Goods.view.DetailsActivity" />
+        <activity android:name=".mine.view.ExitActivity"></activity>
     </application>
 
 </manifest>

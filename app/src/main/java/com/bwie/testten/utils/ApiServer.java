@@ -1,5 +1,6 @@
 package com.bwie.testten.utils;
 
+import com.bwie.testten.Goods.bean.AddBean;
 import com.bwie.testten.Goods.bean.DetailsBean;
 import com.bwie.testten.Goods.bean.GoodBean;
 import com.bwie.testten.classify.bean.OneBean;
@@ -41,4 +42,7 @@ public interface ApiServer {
 
     @POST
     Observable<DetailsBean> getdetail(@Url String url, @QueryMap Map<String,Integer> map);
+
+    @POST
+    Observable<AddBean> getAdd(@Url String url, @QueryMap Map<String,Integer> map);
 }

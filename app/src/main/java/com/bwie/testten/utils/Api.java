@@ -13,4 +13,6 @@ public class Api {
     public static final String GoodList  = "product/getProducts";
 
     public static final String Details = "product/getProductDetail";
+
+    public static final String ADSP = "product/addCart";
 }

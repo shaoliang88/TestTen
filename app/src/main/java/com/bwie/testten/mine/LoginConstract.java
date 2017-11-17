@@ -1,5 +1,9 @@
 package com.bwie.testten.mine;
 
+import com.bwie.testten.mine.bean.LoginBean;
+
+import java.util.List;
+
 /**
  * Created by Zhang on 2017/11/13.
  */
@@ -7,7 +11,7 @@ package com.bwie.testten.mine;
 public interface LoginConstract {
 
     interface ILoginView {
-        void showLogin();
+        void showLogin(LoginBean.DataBean db);
         void showerroe(String e);
     }
 
@@ -16,7 +20,7 @@ public interface LoginConstract {
     }
 
     interface OnRequestListener{
-        void OnSuccess();
+        void OnSuccess(LoginBean.DataBean db);
         void OnError(String e);
     }
 

@@ -49,8 +49,9 @@ public class LoginModel implements LoginConstract.ILoginModel {
 
                     @Override
                     public void onNext(LoginBean loginBean) {
-                        if(loginBean.getCode()==""+0){
-                            onRequestListener.OnSuccess();
+                        if(loginBean.getMsg().equals("登录成功")){
+                            LoginBean.DataBean data = loginBean.getData();
+                            onRequestListener.OnSuccess(data);
                         }else{
                             onRequestListener.OnError(loginBean.getMsg());
                         }

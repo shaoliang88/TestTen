@@ -66,7 +66,6 @@ public class ClassIfyFragment extends Fragment implements ClassifyConstract.ICla
             public void OnItemClickListener(View v, int position) {
                 //Toasts.showLong(getActivity(),list.get(position).getGc_name());
                 cid = list.get(position).getCid();
-
                 leftPresenter.LoadRight(Api.FENLIEURL, cid);
             }
         });

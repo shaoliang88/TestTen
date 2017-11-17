@@ -28,8 +28,6 @@ public class SignUpActivity extends AppCompatActivity implements SignUpConstract
     EditText signupPwd;
     @BindView(R.id.signup_again_pwd)
     EditText signupAgainPwd;
-    @BindView(R.id.signup_email)
-    EditText signupEmail;
     @BindView(R.id.signup_btn)
     Button signupBtn;
     private SignUpPresenter signUpPresenter;
@@ -52,8 +50,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpConstract
                 String name = signupUser.getText().toString().trim();
                 String pwd = signupPwd.getText().toString().trim();
                 String againPwd = signupAgainPwd.getText().toString().trim();
-                String email = signupEmail.getText().toString().trim();
-                signUpPresenter.onSignUp(Api.UserURL,name,pwd,againPwd,email);
+                signUpPresenter.onSignUp(Api.UserURL,name,pwd,againPwd);
                 break;
         }
     }
@@ -61,7 +58,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpConstract
     @Override
     public void ShowSign() {
 
-        Toasts.showLong(this,"登录成功");
+        Toasts.showLong(this,"注册成功");
         
     }
 

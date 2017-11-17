@@ -17,8 +17,8 @@ public class SignUpPresenter implements SignUpConstract.ISignUpPresenter {
     }
 
     @Override
-    public void onSignUp(String url, String username, String password, String password_confirm, String email) {
-        iSignUpModel.RequestData(url, username, password, password_confirm, email, new SignUpConstract.OnRequestListener() {
+    public void onSignUp(String url, String username, String password, String password_confirm) {
+        iSignUpModel.RequestData(url, username, password, password_confirm, new SignUpConstract.OnRequestListener() {
             @Override
             public void OnSuccess() {
                 iSignUpView.ShowSign();

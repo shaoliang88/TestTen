@@ -33,6 +33,7 @@ import com.bwie.testten.utils.Toasts;
 import com.stx.xhb.xbanner.XBanner;
 import com.stx.xhb.xbanner.transformers.Transformer;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +66,7 @@ public class HomeFragment extends Fragment implements BannerConstract.IBannerVie
         View v = inflater.inflate(R.layout.home, container, false);
         unbinder = ButterKnife.bind(this, v);
         // 设置XBanner的页面切换特效
-        banner.setPageTransformer(Transformer.Rotate);
+        banner.setPageTransformer(Transformer.Depth);
         // 设置XBanner页面切换的时间，即动画时长
         banner.setPageChangeDuration(1000);
         banner.stopAutoPlay();
@@ -125,7 +126,7 @@ sllv.setScrollViewListener(new ScrollViewListener() {
         banner.setData(banimg, bantitle);
         banner.setmAdapter(new XBanner.XBannerAdapter() {
             @Override
-            public void loadBanner(XBanner banner, View view, int position) {
+            public void loadBanner(XBanner banner, Object model ,View view, int position) {
                 Glide.with(getActivity()).load(banimg.get(position)).into((ImageView) view);
             }
         });

@@ -11,7 +11,7 @@ public interface SignUpConstract {
     }
 
     interface ISignUpModel {
-        void RequestData(String url,String username,String password,String password_confirm,String email,OnRequestListener onRequestListener);
+        void RequestData(String url,String username,String password,String password_confirm,OnRequestListener onRequestListener);
     }
 
     interface OnRequestListener{
@@ -20,6 +20,6 @@ public interface SignUpConstract {
     }
 
     interface ISignUpPresenter {
-        void onSignUp(String url,String username, String password, String password_confirm, String email);
+        void onSignUp(String url,String username, String password, String password_confirm);
     }
 }

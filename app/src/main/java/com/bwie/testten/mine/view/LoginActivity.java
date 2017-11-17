@@ -1,6 +1,7 @@
 package com.bwie.testten.mine.view;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,15 +12,21 @@ import android.widget.TextView;
 
 import com.bwie.testten.R;
 import com.bwie.testten.mine.LoginConstract;
+import com.bwie.testten.mine.bean.LoginBean;
+import com.bwie.testten.mine.bean.LoginEvent;
 import com.bwie.testten.mine.presenter.LoginPresenter;
 import com.bwie.testten.utils.Api;
 import com.bwie.testten.utils.Toasts;
+
+import org.greenrobot.eventbus.EventBus;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends AppCompatActivity implements LoginConstract.ILoginView{
+public class LoginActivity extends AppCompatActivity implements LoginConstract.ILoginView {
 
     @BindView(R.id.login_back)
     ImageView loginBack;
@@ -52,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements LoginConstract.I
             case R.id.login_btn:
                 String mobile = loginUser.getText().toString().trim();
                 String pwd = loginPwd.getText().toString().trim();
-                loginPresenter.onSignUp(Api.UserURL,mobile,pwd);
+                loginPresenter.onSignUp(Api.UserURL, mobile, pwd);
                 break;
             case R.id.login_tv_Sign_up:
                 Intent in = new Intent(LoginActivity.this, SignUpActivity.class);
@@ -64,13 +71,19 @@ public class LoginActivity extends AppCompatActivity implements LoginConstract.I
     }
 
     @Override
-    public void showLogin() {
-        Toasts.showLong(this,"登录成功");
+    public void showLogin(LoginBean.DataBean db) {
+        SharedPreferences sp = getSharedPreferences("USER", MODE_PRIVATE);
+        sp.edit().putInt("uid", db.getUid())
+                .putString("name", db.getUsername())
+                .putString("pwd", db.getPassword())
+                .commit();
+       Toasts.showLong(this, "登录成功");
+        finish();
     }
 
     @Override
     public void showerroe(String e) {
-        Toasts.showLong(this,e);
+        Toasts.showLong(this, e);
     }
 
 }

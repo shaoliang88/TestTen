@@ -1,6 +1,7 @@
 package com.bwie.testten.mine.presenter;
 
 import com.bwie.testten.mine.LoginConstract;
+import com.bwie.testten.mine.bean.LoginBean;
 import com.bwie.testten.mine.model.LoginModel;
 
 /**
@@ -20,8 +21,8 @@ public class LoginPresenter implements LoginConstract.ILoginPresenter {
     public void onSignUp(String url, String mobile, String password) {
         iLoginModel.RequestData(url, mobile, password, new LoginConstract.OnRequestListener() {
             @Override
-            public void OnSuccess() {
-                iLoginView.showLogin();
+            public void OnSuccess(LoginBean.DataBean db) {
+                iLoginView.showLogin(db);
             }
 
             @Override
