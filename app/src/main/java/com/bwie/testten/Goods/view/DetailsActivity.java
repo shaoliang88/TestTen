@@ -1,9 +1,13 @@
 package com.bwie.testten.Goods.view;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,6 +21,7 @@ import com.bwie.testten.Goods.bean.DetailsBean;
 import com.bwie.testten.Goods.bean.DetailsEvent;
 import com.bwie.testten.Goods.presenter.DetailPresenter;
 import com.bwie.testten.R;
+import com.bwie.testten.mine.view.LoginActivity;
 import com.bwie.testten.utils.Api;
 import com.bwie.testten.utils.Toasts;
 import com.stx.xhb.xbanner.XBanner;
@@ -80,26 +85,28 @@ public class DetailsActivity extends AppCompatActivity implements GoodConstract.
 
     @Override
     public void ShowList(DetailsBean lists) {
-        DetailsBean.SellerBean seller = lists.getSeller();
-        sellerid = seller.getSellerid();
-        DetailsBean.DataBean list = lists.getData();
-        pid = list.getPid();
-        final List<String> img_list = new ArrayList<>();
-        String images = list.getImages();
-        String[] split = images.split("\\|");
-        for (int i = 0; i < split.length; i++) {
-            img_list.add(split[i]);
-        }
-        detailBanner.setData(img_list, null);
-        detailBanner.setmAdapter(new XBanner.XBannerAdapter() {
-            @Override
-            public void loadBanner(XBanner banner, Object model, View view, int position) {
-                Glide.with(DetailsActivity.this).load(img_list.get(position)).into((ImageView) view);
+
+            DetailsBean.SellerBean seller = lists.getSeller();
+            sellerid = seller.getSellerid();
+            DetailsBean.DataBean list = lists.getData();
+            pid = list.getPid();
+            final List<String> img_list = new ArrayList<>();
+            String images = list.getImages();
+            String[] split = images.split("\\|");
+            for (int i = 0; i < split.length; i++) {
+                img_list.add(split[i]);
             }
-        });
-        detailsTitle.setText(list.getTitle());
-        detailsPrice.setText("￥ " + list.getPrice() + "");
-        detailsText.setText(list.getSubhead());
+            detailBanner.setData(img_list, null);
+            detailBanner.setmAdapter(new XBanner.XBannerAdapter() {
+                @Override
+                public void loadBanner(XBanner banner, Object model, View view, int position) {
+                    Glide.with(DetailsActivity.this).load(img_list.get(position)).into((ImageView) view);
+                }
+            });
+            detailsTitle.setText(list.getTitle());
+            detailsPrice.setText("￥ " + list.getPrice() + "");
+            detailsText.setText(list.getSubhead());
+
 
     }
 
@@ -116,6 +123,7 @@ public class DetailsActivity extends AppCompatActivity implements GoodConstract.
     @Override
     public void ShowError(String e) {
         Toasts.showLong(this, e);
+        Log.e("哈哈哈哈哈哈啊哈",e);
     }
 
     @OnClick({R.id.buy_now, R.id.add_cart})
@@ -129,11 +137,22 @@ public class DetailsActivity extends AppCompatActivity implements GoodConstract.
                 String name = user.getString("name", "000");
                 int uid = user.getInt("uid", 0);
                 if(name.equals("000")){
-                    Toasts.showLong(DetailsActivity.this,"请先登录");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(DetailsActivity.this);
+                    builder.setNegativeButton("取消",null);
+                    builder.setTitle("请登录");
+                    builder.setMessage("您确定要登录吗？");
+                    builder.setPositiveButton("登录", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent in = new Intent(DetailsActivity.this, LoginActivity.class);
+                            startActivity(in);
+                        }
+                    }).show();
                 }else{
                     detailPresenter.LoadAdd(Api.BANNERURL,uid,pid,sellerid);
                 }
                 break;
+
         }
     }
 }

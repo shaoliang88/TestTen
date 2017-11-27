@@ -45,7 +45,7 @@ import butterknife.Unbinder;
  * Created by Zhang on 2017/11/9.
  */
 
-public class HomeFragment extends Fragment implements BannerConstract.IBannerView{
+public class HomeFragment extends Fragment implements BannerConstract.IBannerView {
 
     @BindView(R.id.banner)
     XBanner banner;
@@ -58,7 +58,7 @@ public class HomeFragment extends Fragment implements BannerConstract.IBannerVie
     Toolbar mToolbar;
     @BindView(R.id.sllv)
     ObservableScrollView sllv;
-    int mDistanceY ;
+    int mDistanceY;
 
     @Nullable
     @Override
@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment implements BannerConstract.IBannerVie
         banner.setPageTransformer(Transformer.Depth);
         // 设置XBanner页面切换的时间，即动画时长
         banner.setPageChangeDuration(1000);
-        banner.stopAutoPlay();
+
         BannerPresenter bannerPresenter = new BannerPresenter(this);
         bannerPresenter.LoadBan(Api.BANNERURL);
         //sllv.setScrollViewListener(this);
@@ -79,31 +79,31 @@ public class HomeFragment extends Fragment implements BannerConstract.IBannerVie
 
     private void getbar() {
 
-sllv.setScrollViewListener(new ScrollViewListener() {
-    @Override
-    public void onScrollChanged(ScrollView scrollView, int x, int y, int oldx, int oldy) {
-        mDistanceY += y;
-        //toolbar的高度
-        int toolbarHeight = 10000;
+        sllv.setScrollViewListener(new ScrollViewListener() {
+            @Override
+            public void onScrollChanged(ScrollView scrollView, int x, int y, int oldx, int oldy) {
+                mDistanceY += y;
+                //toolbar的高度
+                int toolbarHeight = 10000;
 
-        //当滑动的距离 <= toolbar高度的时候，改变Toolbar背景色的透明度，达到渐变的效果
-        if (mDistanceY <= toolbarHeight) {
-            float scale = (float) mDistanceY / toolbarHeight;
-            float alpha = scale * 255;
-            mToolbar.setBackgroundColor(Color.argb((int) alpha, 128, 0, 0));
-        } else {
-            //上述虽然判断了滑动距离与toolbar高度相等的情况，但是实际测试时发现，标题栏的背景色
-            //很少能达到完全不透明的情况，所以这里又判断了滑动距离大于toolbar高度的情况，
-            //将标题栏的颜色设置为完全不透明状态
-            mToolbar.setBackgroundResource(R.color.colorAccent);
-        }
-        if(oldy>y){
-            float scale = (float) mDistanceY / toolbarHeight;
-            float alpha = scale / 255;
-            mToolbar.setBackgroundColor(Color.argb((int) alpha, 128, 0, 0));
-        }
-    }
-});
+                //当滑动的距离 <= toolbar高度的时候，改变Toolbar背景色的透明度，达到渐变的效果
+                if (mDistanceY <= toolbarHeight) {
+                    float scale = (float) mDistanceY / toolbarHeight;
+                    float alpha = scale * 255;
+                    mToolbar.setBackgroundColor(Color.argb((int) alpha, 128, 0, 0));
+                } else {
+                    //上述虽然判断了滑动距离与toolbar高度相等的情况，但是实际测试时发现，标题栏的背景色
+                    //很少能达到完全不透明的情况，所以这里又判断了滑动距离大于toolbar高度的情况，
+                    //将标题栏的颜色设置为完全不透明状态
+                    mToolbar.setBackgroundResource(R.color.colorAccent);
+                }
+                if (oldy > y) {
+                    float scale = (float) mDistanceY / toolbarHeight;
+                    float alpha = scale / 255;
+                    mToolbar.setBackgroundColor(Color.argb((int) alpha, 128, 0, 0));
+                }
+            }
+        });
 
     }
 
@@ -116,6 +116,7 @@ sllv.setScrollViewListener(new ScrollViewListener() {
 
     @Override
     public void ShowBanner(BannerBean bb) {
+        Log.e("哈哈哈啊哈哈哈哈哈啊",bb.toString());
         List<String> bantitle = new ArrayList<>();
         final List<String> banimg = new ArrayList<>();
         List<BannerBean.DataBean> data = bb.getData();
@@ -126,7 +127,7 @@ sllv.setScrollViewListener(new ScrollViewListener() {
         banner.setData(banimg, bantitle);
         banner.setmAdapter(new XBanner.XBannerAdapter() {
             @Override
-            public void loadBanner(XBanner banner, Object model ,View view, int position) {
+            public void loadBanner(XBanner banner, Object model, View view, int position) {
                 Glide.with(getActivity()).load(banimg.get(position)).into((ImageView) view);
             }
         });
@@ -160,7 +161,6 @@ sllv.setScrollViewListener(new ScrollViewListener() {
         super.onStop();
         banner.stopAutoPlay();
     }
-
 
 
 }

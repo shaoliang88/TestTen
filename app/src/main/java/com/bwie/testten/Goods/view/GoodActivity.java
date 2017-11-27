@@ -1,5 +1,6 @@
 package com.bwie.testten.Goods.view;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -56,6 +57,7 @@ public class GoodActivity extends AppCompatActivity implements GoodConstract.IGo
 
     @Override
     public void ShowList(List<GoodBean.DataBean> list) {
+
         GoodAdapter goodAdapter = new GoodAdapter(list, GoodActivity.this);
         if(list!=null){
             goodRcv.setAdapter(goodAdapter);
