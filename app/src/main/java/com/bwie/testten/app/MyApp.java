@@ -6,6 +6,9 @@ import com.bwie.testten.utils.NetUtils;
 import com.bwie.testten.utils.Toasts;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
+import org.xutils.BuildConfig;
+import org.xutils.x;
+
 /**
  * Created by Zhang on 2017/11/9.
  */
@@ -28,7 +31,13 @@ public class MyApp extends Application{
         }else{
             Toasts.showLong(this,"当前网络无法连接");
         }
+        initxUtils();
 
-
+    }
+    private void initxUtils() {
+        //初始化
+        x.Ext.init(this);
+        // 设置是否输出debug
+        x.Ext.setDebug(BuildConfig.DEBUG);
     }
 }

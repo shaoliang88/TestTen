@@ -23,6 +23,7 @@ import com.bwie.testten.shopcar.adapter.ShopCarAdapter;
 import com.bwie.testten.shopcar.bean.DeleteBean;
 import com.bwie.testten.shopcar.bean.ShopCarBean;
 import com.bwie.testten.shopcar.bean.ShopCarEvent;
+import com.bwie.testten.shopcar.pay.PayDemoActivity;
 import com.bwie.testten.shopcar.presenter.ShopCarPresenter;
 import com.bwie.testten.utils.Api;
 import com.bwie.testten.utils.Toasts;
@@ -204,7 +205,8 @@ public class ShopCarFragment extends Fragment implements ShopCarConstract.ICarVi
                 startActivity(in);
                 break;
             case R.id.pay:
-
+                Intent inpay = new Intent(getActivity(), PayDemoActivity.class);
+                startActivity(inpay);
                 break;
         }
     }
