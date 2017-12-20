@@ -20,9 +20,6 @@ import retrofit2.http.QueryMap;
 import retrofit2.http.Url;
 import rx.Observable;
 
-/**
- * Created by fan on 2017/11/8.
- */
 
 public interface ApiServer {
     @POST

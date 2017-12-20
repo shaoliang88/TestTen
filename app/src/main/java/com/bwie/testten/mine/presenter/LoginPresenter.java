@@ -4,9 +4,6 @@ import com.bwie.testten.mine.LoginConstract;
 import com.bwie.testten.mine.bean.LoginBean;
 import com.bwie.testten.mine.model.LoginModel;
 
-/**
- * Created by Zhang on 2017/11/13.
- */
 
 public class LoginPresenter implements LoginConstract.ILoginPresenter {
     LoginConstract.ILoginView iLoginView;

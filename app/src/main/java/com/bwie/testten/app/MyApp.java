@@ -9,9 +9,7 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import org.xutils.BuildConfig;
 import org.xutils.x;
 
-/**
- * Created by Zhang on 2017/11/9.
- */
+
 
 public class MyApp extends Application{
     @Override

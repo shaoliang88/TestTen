@@ -5,9 +5,6 @@ import com.bwie.testten.Goods.bean.AddBean;
 import com.bwie.testten.Goods.bean.DetailsBean;
 import com.bwie.testten.Goods.model.GoodModel;
 
-/**
- * Created by Zhang on 2017/11/16.
- */
 
 public class DetailPresenter implements GoodConstract.IDetailPresenter {
     GoodConstract.IDetailsView iDetailsView;

@@ -12,9 +12,6 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-/**
- * Created by fan on 2017/11/8.
- */
 
 public class NetUtils {
     private NetUtils() {

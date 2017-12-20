@@ -5,10 +5,6 @@ import com.bwie.testten.shopcar.bean.ShopCarBean;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/18.
- */
-
 public interface ShopCarConstract {
     interface ICarView{
         void ShowList(List<ShopCarBean.DataBean> list);

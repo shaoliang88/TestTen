@@ -1,8 +1,5 @@
 package com.bwie.testten.shopcar.bean;
 
-/**
- * Created by Zhang on 2017/11/29.
- */
 
 public class OrdersBean {
 

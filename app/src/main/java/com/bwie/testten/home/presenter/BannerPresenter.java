@@ -4,9 +4,7 @@ import com.bwie.testten.home.BannerConstract;
 import com.bwie.testten.home.Bean.BannerBean;
 import com.bwie.testten.home.model.BannerModel;
 
-/**
- * Created by Zhang on 2017/11/14.
- */
+
 
 public class BannerPresenter implements BannerConstract.IBannerPresenter {
     BannerConstract.IBannerView iBannerView;

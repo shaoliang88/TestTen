@@ -4,9 +4,7 @@ import com.bwie.testten.mine.bean.LoginBean;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/13.
- */
+
 
 public interface LoginConstract {
 

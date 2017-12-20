@@ -26,9 +26,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-/**
- * Created by Zhang on 2017/11/9.
- */
 
 public class ClassIfyFragment extends Fragment implements ClassifyConstract.IClassifyView {
     @BindView(R.id.left_rcv)

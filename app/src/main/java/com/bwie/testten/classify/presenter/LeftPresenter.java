@@ -7,9 +7,7 @@ import com.bwie.testten.classify.model.LeftModel;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/14.
- */
+
 
 public class LeftPresenter implements ClassifyConstract.IClassifyPresenter {
     ClassifyConstract.IClassifyView iClassifyView;

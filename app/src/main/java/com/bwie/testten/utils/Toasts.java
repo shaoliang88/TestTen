@@ -5,14 +5,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
-/**
- * Created by fan on 2017/11/8.
- */
-
 public class Toasts {
-    private static boolean isShow = true;//默认显示
-    private static Toast mToast = null;//全局唯一的Toast
+    private static boolean isShow = true;
+    private static Toast mToast = null;
 
     /*private控制不应该被实例化*/
     private Toasts() {

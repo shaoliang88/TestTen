@@ -1,8 +1,5 @@
 package com.bwie.testten.Goods.bean;
 
-/**
- * Created by Zhang on 2017/11/17.
- */
 
 public class AddBean {
 

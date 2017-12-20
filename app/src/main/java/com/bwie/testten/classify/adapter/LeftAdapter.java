@@ -21,9 +21,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.http.Url;
 
-/**
- * Created by Zhang on 2017/11/14.
- */
 
 public class LeftAdapter extends RecyclerView.Adapter<LeftAdapter.MyViewHolder> {
 

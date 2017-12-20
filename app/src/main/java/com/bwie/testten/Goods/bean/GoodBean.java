@@ -2,9 +2,6 @@ package com.bwie.testten.Goods.bean;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/16.
- */
 
 public class GoodBean {
 

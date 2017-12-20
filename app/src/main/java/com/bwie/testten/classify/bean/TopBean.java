@@ -2,9 +2,6 @@ package com.bwie.testten.classify.bean;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/13.
- */
 
 public class TopBean {
 

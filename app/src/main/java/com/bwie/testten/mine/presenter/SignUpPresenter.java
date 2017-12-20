@@ -3,9 +3,6 @@ package com.bwie.testten.mine.presenter;
 import com.bwie.testten.mine.SignUpConstract;
 import com.bwie.testten.mine.model.SignUpModel;
 
-/**
- * Created by Zhang on 2017/11/13.
- */
 
 public class SignUpPresenter implements SignUpConstract.ISignUpPresenter {
     SignUpConstract.ISignUpView iSignUpView;

@@ -23,10 +23,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-/**
- * Created by Zhang on 2017/11/9.
- */
-
 public class MeFragment extends Fragment {
     @BindView(R.id.tv_name_back)
     TextView tvNameBack;

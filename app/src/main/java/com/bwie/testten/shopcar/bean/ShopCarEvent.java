@@ -1,8 +1,5 @@
 package com.bwie.testten.shopcar.bean;
 
-/**
- * Created by Zhang on 2017/11/22.
- */
 
 public class ShopCarEvent {
     float price;

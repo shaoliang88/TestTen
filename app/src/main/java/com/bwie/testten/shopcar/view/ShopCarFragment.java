@@ -40,10 +40,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-/**
- * Created by Zhang on 2017/11/9.
- */
-
 public class ShopCarFragment extends Fragment implements ShopCarConstract.ICarView {
 
     @BindView(R.id.tv_keepout)

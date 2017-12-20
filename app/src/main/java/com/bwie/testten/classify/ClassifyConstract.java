@@ -5,9 +5,6 @@ import com.bwie.testten.classify.bean.TwoBean;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/13.
- */
 
 public interface ClassifyConstract {
     interface IClassifyView{

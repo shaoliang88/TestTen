@@ -1,9 +1,5 @@
 package com.bwie.testten.mine.bean;
 
-/**
- * Created by Zhang on 2017/9/13.
- */
-
 public class LoginBean {
     /**
      * msg : 登录成功

@@ -2,9 +2,6 @@ package com.bwie.testten.shopcar.bean;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/18.
- */
 
 public class ShopCarBean {
 

@@ -7,9 +7,6 @@ import com.bwie.testten.Goods.model.GoodModel;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/16.
- */
 
 public class GoodPresenter implements GoodConstract.IGoodPresenter {
     GoodConstract.IGoodView iGoodView;

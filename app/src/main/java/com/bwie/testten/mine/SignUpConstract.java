@@ -1,8 +1,6 @@
 package com.bwie.testten.mine;
 
-/**
- * Created by Zhang on 2017/11/13.
- */
+
 
 public interface SignUpConstract {
     interface ISignUpView {

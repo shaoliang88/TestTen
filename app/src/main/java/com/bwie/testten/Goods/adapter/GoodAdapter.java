@@ -22,10 +22,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Zhang on 2017/11/16.
- */
-
 public class GoodAdapter extends RecyclerView.Adapter<GoodAdapter.MyViewHolder> {
 
 

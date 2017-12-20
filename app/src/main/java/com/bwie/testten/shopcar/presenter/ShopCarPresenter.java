@@ -7,9 +7,7 @@ import com.bwie.testten.shopcar.model.ShopCarModel;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/18.
- */
+
 
 public class ShopCarPresenter implements ShopCarConstract.ICarPresenter {
 

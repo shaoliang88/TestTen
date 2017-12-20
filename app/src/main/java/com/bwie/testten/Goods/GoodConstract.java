@@ -6,9 +6,6 @@ import com.bwie.testten.Goods.bean.GoodBean;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/16.
- */
 
 public interface GoodConstract {
     interface IGoodView{

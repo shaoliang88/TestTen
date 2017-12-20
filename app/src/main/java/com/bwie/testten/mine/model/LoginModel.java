@@ -15,9 +15,6 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-/**
- * Created by Zhang on 2017/11/13.
- */
 
 public class LoginModel implements LoginConstract.ILoginModel {
     @Override

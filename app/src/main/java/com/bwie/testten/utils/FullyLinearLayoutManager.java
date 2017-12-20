@@ -8,9 +8,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-/**
- * Created by Zhang on 2017/11/15.
- */
 
 public class FullyLinearLayoutManager extends LinearLayoutManager {
 
