@@ -24,15 +24,14 @@ public class MyApp extends Application{
         if(connected){
             boolean available = NetUtils.isAvailable(this);
             if(available){
-                Toasts.showLong(this,"网络已连接");
+//                Toasts.showLong(this,"网络已连接");
             }else{
-                Toasts.showLong(this,"当前网络不可用");
+//                Toasts.showLong(this,"当前网络不可用");
             }
         }else{
-            Toasts.showLong(this,"当前网络无法连接");
+//            Toasts.showLong(this,"当前网络无法连接");
         }
         initxUtils();
-
     }
     private void initxUtils() {
         //初始化

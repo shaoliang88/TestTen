@@ -22,7 +22,7 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/ic_default_user_head" />
+                    android:src="@mipmap/touxiang4" />
 
                 <TextView
                     android:id="@+id/tv_name_back"

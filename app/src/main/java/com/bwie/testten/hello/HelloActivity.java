@@ -1,5 +1,4 @@
 package com.bwie.testten.hello;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,8 +12,6 @@ import com.bwie.testten.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-
 public class HelloActivity extends AppCompatActivity {
     @BindView(R.id.tvhello)
     TextView tvhello;

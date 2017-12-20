@@ -12,6 +12,7 @@ import com.bwie.testten.Goods.view.GoodActivity;
 import com.bwie.testten.R;
 import com.bwie.testten.classify.bean.MessageEvent;
 import com.bwie.testten.classify.bean.TwoBean;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -46,6 +47,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.MyViewHodler
     public void onBindViewHolder(MyViewHodler holder, int position) {
         final TwoBean.DataBean.ListBean listBean = list.get(position);
         holder.tvTwogrid.setText(listBean.getName());
+        holder.simpl.setImageURI(listBean.getIcon());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,16 +62,19 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.MyViewHodler
 
     @Override
     public int getItemCount() {
-        return list==null?0:list.size();
+        return list == null ? 0 : list.size();
     }
 
+
     static class MyViewHodler extends RecyclerView.ViewHolder {
+        @BindView(R.id.simpl)
+        SimpleDraweeView simpl;
         @BindView(R.id.tv_twogrid)
         TextView tvTwogrid;
 
-        public MyViewHodler(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
+        MyViewHodler(View view) {
+            super(view);
+            ButterKnife.bind(this, view);
         }
     }
 }

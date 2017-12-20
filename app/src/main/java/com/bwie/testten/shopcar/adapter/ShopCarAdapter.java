@@ -104,6 +104,7 @@ public class ShopCarAdapter extends RecyclerView.Adapter<ShopCarAdapter.MyViewHo
                 @Override
                 public void onClick(View v) {
                     onDeleteListener.onDelete(v,position);
+                    notifyDataSetChanged();
                 }
             });
         }

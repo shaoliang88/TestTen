@@ -2,9 +2,7 @@ package com.bwie.testten.home.Bean;
 
 import java.util.List;
 
-/**
- * Created by Zhang on 2017/11/14.
- */
+
 
 public class BannerBean {
 

@@ -18,9 +18,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Zhang on 2017/11/14.
- */
 
 public class MiaoShaAdapter extends RecyclerView.Adapter<MiaoShaAdapter.MyViewHolder> {
 

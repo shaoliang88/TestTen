@@ -15,10 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <com.bwie.testten.home.RecommendRecyclerView
-        android:background="#f0f0f0"
         android:id="@+id/tworcv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        >
 
     </com.bwie.testten.home.RecommendRecyclerView>
 </LinearLayout>

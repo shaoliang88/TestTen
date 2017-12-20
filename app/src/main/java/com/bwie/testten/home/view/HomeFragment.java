@@ -1,9 +1,5 @@
 package com.bwie.testten.home.view;
-
 import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -41,10 +37,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-/**
- * Created by Zhang on 2017/11/9.
- */
-
 public class HomeFragment extends Fragment implements BannerConstract.IBannerView {
 
     @BindView(R.id.banner)
@@ -59,7 +51,6 @@ public class HomeFragment extends Fragment implements BannerConstract.IBannerVie
     @BindView(R.id.sllv)
     ObservableScrollView sllv;
     int mDistanceY;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -69,14 +60,12 @@ public class HomeFragment extends Fragment implements BannerConstract.IBannerVie
         banner.setPageTransformer(Transformer.Depth);
         // 设置XBanner页面切换的时间，即动画时长
         banner.setPageChangeDuration(1000);
-
         BannerPresenter bannerPresenter = new BannerPresenter(this);
         bannerPresenter.LoadBan(Api.BANNERURL);
         //sllv.setScrollViewListener(this);
         getbar();
         return v;
     }
-
     private void getbar() {
 
         sllv.setScrollViewListener(new ScrollViewListener() {
@@ -147,7 +136,7 @@ public class HomeFragment extends Fragment implements BannerConstract.IBannerVie
     @Override
     public void ShowError(String e) {
         Toasts.showLong(getActivity(), "" + e);
-        Log.e("错错粗粗哦错错错从错错错", e);
+        Log.e("哈哈哈哈", e);
     }
 
     @Override
